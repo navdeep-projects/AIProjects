@@ -25,3 +25,4 @@ rank_bm25
 wikipedia
 langgraph
 pydantic
+langgraph
