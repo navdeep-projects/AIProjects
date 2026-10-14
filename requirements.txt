@@ -29,3 +29,4 @@ langgraph
 langchain-core
 langchain-community
 langchain_tavily
+langgraph_supervisor
