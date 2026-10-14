@@ -26,3 +26,5 @@ wikipedia
 langgraph
 pydantic
 langgraph
+langchain-core
+langchain-community
