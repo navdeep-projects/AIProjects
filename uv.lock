@@ -1669,6 +1669,21 @@ wheels = [
 ]
 
 [[package]]
+name = "langchain-tavily"
+version = "0.2.18"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "aiohttp" },
+    { name = "langchain" },
+    { name = "langchain-core" },
+    { name = "requests" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/d6/6c/b309ef3062b189a82463dc93553804566e71aa393f9ba8954750793c1a6f/langchain_tavily-0.2.18.tar.gz", hash = "sha256:cd7859ae1a6ce79236580ef67072ff5fc43c7ded94e7eac38ff04209ca85a320", size = 25378, upload-time = "2026-04-16T15:23:24.526Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/71/9c/0c043e4434b1823f0ac194f66036cbb0569275a99dcb890e0891ecd34fb2/langchain_tavily-0.2.18-py3-none-any.whl", hash = "sha256:dccf3ad1c50e2cb2a89bec11727555805c9df8abd42c1f3ad42ccad86e28aa44", size = 30814, upload-time = "2026-04-16T15:23:23.424Z" },
+]
+
+[[package]]
 name = "langchain-text-splitters"
 version = "1.1.3"
 source = { registry = "https://pypi.org/simple" }
@@ -2047,6 +2062,7 @@ dependencies = [
     { name = "langchain-groq" },
     { name = "langchain-huggingface" },
     { name = "langchain-openai" },
+    { name = "langchain-tavily" },
     { name = "langgraph" },
     { name = "matplotlib" },
     { name = "openpyxl" },
@@ -2078,6 +2094,7 @@ requires-dist = [
     { name = "langchain-groq", specifier = ">=1.1.3" },
     { name = "langchain-huggingface", specifier = ">=1.2.2" },
     { name = "langchain-openai", specifier = ">=1.6.7" },
+    { name = "langchain-tavily", specifier = ">=0.2.18" },
     { name = "langgraph", specifier = ">=1.2.13" },
     { name = "matplotlib", specifier = ">=3.11.2" },
     { name = "openpyxl", specifier = ">=3.1.5" },

@@ -28,3 +28,4 @@ pydantic
 langgraph
 langchain-core
 langchain-community
+langchain_tavily
