@@ -9,6 +9,7 @@ authors = [
 requires-python = ">=3.14"
 dependencies = [
     "chromadb>=1.5.9",
+    "deepeval>=4.3.0",
     "docx2txt>=0.9",
     "faiss-cpu>=1.15.1",
     "ipykernel>=7.4.0",
@@ -31,6 +32,7 @@ dependencies = [
     "openpyxl>=3.1.5",
     "pandas>=3.0.6",
     "pdfminer>=20191125",
+    "portalocker>=4.4.1",
     "pydantic>=2.13.5",
     "pymupdf>=1.28.2",
     "pypdf>=6.19.0",
