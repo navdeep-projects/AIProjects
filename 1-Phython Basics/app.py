@@ -23,3 +23,23 @@ def greet(
     print(f"Hello {name}")
 
 greet("Navdeep")
+
+
+docs = [
+    ["apple", "banana"],
+    ["mango", "orange"],
+    ["grape"]
+]
+
+result = [item for sublist in docs for item in sublist]
+
+print(result)
+
+
+result1 = []
+
+for sublist in docs:
+    for item in sublist:
+        result1.append(item)
+
+print(result1)
