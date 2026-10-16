@@ -43,3 +43,5 @@ for sublist in docs:
         result1.append(item)
 
 print(result1)
+
+
