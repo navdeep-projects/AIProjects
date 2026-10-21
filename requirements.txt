@@ -30,3 +30,8 @@ langchain-core
 langchain-community
 langchain_tavily
 langgraph_supervisor
+beautifulsoup4
+requests
+streamlit
+wikipedia
+pydantic
