@@ -1,6 +1,6 @@
 """ Langgraph nodes for RAG Workflow"""
 
-from src.state.rag_state import RAGState
+from src.ml.state.rag_state import RAGState
 
 class RAGNodes:
     """Contains node function for RAG Workflow"""
@@ -15,9 +15,6 @@ class RAGNodes:
         """
         self.retriever = retriever
         self.llm = llm
-
-       def generate_answer(self, *args, **kwargs):
-        return self.llm.generate(*args, **kwargs)
 
     def retrieve_docs(self, state:RAGState) -> RAGState:
         """

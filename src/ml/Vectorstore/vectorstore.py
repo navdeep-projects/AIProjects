@@ -2,8 +2,8 @@
 
 from typing import List
 from langchain_community.vectorstores import FAISS
-from langchain.embeddings import OpenAIEmbeddings
-from langchain.schema import Document
+from langchain_openai import OpenAIEmbeddings
+from langchain_core.documents import Document
 
 class VectorStore:
     """Manages Vector store application"""

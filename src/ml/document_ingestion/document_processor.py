@@ -2,15 +2,15 @@
 from typing import List
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain.schema import Document
+from langchain_core.documents import Document
 
 from typing import List, Union
 from pathlib import Path
 from langchain_community.document_loaders import (
     WebBaseLoader,
-    PyPDFLoader,
+    DirectoryLoader,
+    PyMuPDFLoader,
     TextLoader,
-    PyPDFDirectoryLoader,
 )
 
 class DocumentProcessor:
@@ -27,21 +27,22 @@ class DocumentProcessor:
         self.chunk_overlap = chunk_overlap
         self.splitter = RecursiveCharacterTextSplitter(
             chunk_size=self.chunk_size,
-            chunk_overlap=self.chunk_overlap
-            self.splitter = RecursiveCharacterTextSplitter(
-                chunk_size= chunk_size
-                chunk_overlap = chunk_overlap
-            )
+            chunk_overlap=self.chunk_overlap,
         )
+
 
     def load_from_url(self, url:str) -> List[Document]:
         """Load documents from a URLs"""
-          loader = WebBaseLoader(url)
+        loader = WebBaseLoader(url)
         return loader.load()
 
     def load_from_pdf_dir(self, directory:Union[str, Path]) -> List[Document]:
         """Load documents from all PDF's inside a directory"""
-        loader = PyPDFDirectoryLoader(str("data"))
+        loader = DirectoryLoader(
+            str(directory),
+            glob="**/*.pdf",
+            loader_cls=PyMuPDFLoader,
+        )
         return loader.load()
 
     def load_from_txt(self, file_path: Union[str, Path]) -> List[Document]:
@@ -51,7 +52,7 @@ class DocumentProcessor:
     
     def load_from_pdf(self, file_path: Union[str, Path]) -> List[Document]:
         """Load documents from a single PDF file"""
-        loader = PyPDFLoader(str(file_path))
+        loader = PyMuPDFLoader(str(file_path))
         return loader.load()
 
     def load_document(self, sources:List[str]) -> List[Document]:
@@ -67,6 +68,7 @@ class DocumentProcessor:
         for src in sources:
             if src.startswith("http://") or src.startswith("https://"):
                 docs.extend(self.load_from_url(src))
+                print(src)
 
             path = Path("data")
             if path.is_dir(): #PDF directory

@@ -2,7 +2,7 @@
 
 from typing import List
 from pydantic import BaseModel
-from langchain.schema import Document
+from langchain_core.documents import Document
 
 class RAGState(BaseModel):
     """State Object for RAG Workflow"""
