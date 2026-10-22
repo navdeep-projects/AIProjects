@@ -4,9 +4,6 @@ import streamlit as st
 from pathlib import Path
 import sys
 import time
-import uuid
-
-# ...existing code...
 
 # Add src to path
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
@@ -15,6 +12,7 @@ from src.ml.config.config import Config
 from src.ml.document_ingestion.document_processor import DocumentProcessor
 from src.ml.Vectorstore.vectorstore import VectorStore
 from src.ml.graph_builder.graph_builder import GraphBuilder
+from src.ml.Generate.Generatepdf import GeneratePdf
 
 # Page configuration
 st.set_page_config(
@@ -38,8 +36,6 @@ st.markdown("""
 def init_session_state():
     """Initialize session state variables"""
     
-    if 'session_id' not in st.session_state:
-        st.session_state.session_id = str(uuid.uuid4())
     if 'rag_system' not in st.session_state:
         st.session_state.rag_system = None
     if 'initialized' not in st.session_state:
@@ -87,8 +83,7 @@ def initialize_rag():
 def main():
     """Main application"""
     init_session_state()
-    st.sidebar.caption(f"Session ID: {st.session_state.session_id}")
-      
+          
     # Title
     st.title("🔍 RAG Document Search")
     st.markdown("Ask questions about the loaded documents")
@@ -157,6 +152,12 @@ def main():
                 st.markdown(f"**A:** {item['answer'][:200]}...")
                 st.caption(f"Time: {item['time']:.2f}s")
                 st.markdown("")
-
+        
+        text = "\n".join(
+            f"Q: {item['question']}\nA: {item['answer'][:200]}..." for item in reversed(st.session_state.history[-6:])
+        )
+        GeneratePdf.OUTPUT_FILE = GeneratePdf.PROJECT_DIR / f"{item['question']}.pdf"
+        GeneratePdf.OUTPUT_FILE.write_bytes(GeneratePdf.create_pdf(text))
+        st.success(f"📄 PDF generated: {GeneratePdf.OUTPUT_FILE}")
 if __name__ == "__main__":
     main()

@@ -104,11 +104,11 @@ class RAGNodes:
         print("Messages retrieved")
         answer: Optional[str] = None
         if messages:
-            answer_msg = messages[-1].content
+            answer_msg = messages[-1]
             answer = getattr(answer_msg, "content", None)
 
         return RAGState(
             question=state.question,
             retrieved_docs=state.retrieved_docs,
-            answer=answer or "Could not generate answer."
+            answer= answer 
         )

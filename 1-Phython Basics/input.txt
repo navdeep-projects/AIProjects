@@ -1,0 +1,4 @@
+Welcome to the Python PDF project.
+
+This sample text is read from a file and rendered into a PDF document.
+You can replace this text with your own content and run the script again.
