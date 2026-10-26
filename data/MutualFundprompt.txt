@@ -1,0 +1,12 @@
+Do not invent, estimate, or simulate financial data. Every material figure must have a source and data date. 
+If a data point cannot be verified,Do not invent, estimate, or simulate financial data. 
+Every material figure must have a source and data date. 
+If a data point cannot be verified, mark it as “Data not available” rather than making an assumption.
+Mutual fund name is HDFC Flexi Cap Fund Direct for following report Structure.
+REPORT STRUCTURE
+Executive Summary Provide a concise summary covering:
+Fund return during the quarter
+Benchmark return during the quarter
+Outperformance or underperformance in percentage 
+points Change in NAV Change in assets under management, if data is available Major portfolio developments Key positive and negative observations Overall 
+

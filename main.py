@@ -12,16 +12,16 @@ from src.ml.vectorstore.vectorstore import VectorStore
 from src.ml.graph_builder.graph_builder import GraphBuilder
 
 class AgenticRAG:
-    """Main Agentic RAG application"""
+    """Main Agentic RAG application for Stock Market and Mutual Fund workflows"""
     
     def __init__(self, urls=None):
         """
-        Initialize Agentic RAG system
+        Initialize Agentic RAG system for Stock Market and Mutual Fund workflows
         
         Args:
             urls: List of URLs to process (uses defaults if None)
         """
-        print("🚀 Initializing Agentic RAG System...")
+        print("🚀 Initializing Stock Market and Mutual Fund Agentic RAG System...")
         
         # Use default URLs if none provided
         self.urls = urls or Config.DEFAULT_URLS

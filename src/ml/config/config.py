@@ -30,6 +30,11 @@ class Config:
         "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=17&smid=39"
     ]
 
+    MutualFund_DOC_URL = [
+        "https://www.amfiindia.com/",
+        "https://www.hdfcfund.com/",
+    ]   
+        
     @classmethod
     def get_llm(cls):
         """Intialize and return the LLM Model"""
