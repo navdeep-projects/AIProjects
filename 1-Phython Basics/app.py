@@ -1,6 +1,6 @@
 print("Hello, World!")
 print(1+1)
-print("Python Basics")
+print("Python Basics and hindi")
 
 from typing import Literal
 
