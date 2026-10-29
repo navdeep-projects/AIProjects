@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 5
 requires-python = ">=3.14"
 resolution-markers = [
     "python_full_version >= '3.15' and sys_platform == 'win32'",
@@ -2296,6 +2296,7 @@ dependencies = [
     { name = "streamlit" },
     { name = "tensorflow" },
     { name = "tiktoken" },
+    { name = "truststore" },
     { name = "unstructured" },
     { name = "wikipedia" },
 ]
@@ -2340,6 +2341,7 @@ requires-dist = [
     { name = "streamlit" },
     { name = "tensorflow", specifier = ">=2.22.0rc0" },
     { name = "tiktoken", specifier = ">=0.14.0" },
+    { name = "truststore", specifier = ">=0.10.4" },
     { name = "unstructured", specifier = ">=0.27.16" },
     { name = "wikipedia", specifier = ">=1.4.0" },
 ]

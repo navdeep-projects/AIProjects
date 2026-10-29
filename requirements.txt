@@ -24,6 +24,7 @@ langchain-experimental
 rank_bm25
 wikipedia
 langgraph
+truststore
 pydantic
 langgraph
 langchain-core

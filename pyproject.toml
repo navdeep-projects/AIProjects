@@ -46,6 +46,7 @@ dependencies = [
     "streamlit",
     "tensorflow>=2.22.0rc0",
     "tiktoken>=0.14.0",
+    "truststore>=0.10.4",
     "unstructured>=0.27.16",
     "wikipedia>=1.4.0",
 ]
